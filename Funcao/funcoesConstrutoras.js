@@ -19,6 +19,7 @@ function carro(velocidademax = 200, delta = 5){
 const uno = new carro
 uno.acelerar()
 console.log(uno.getvelocidadeaAtual())
+
 const ferrari = new carro(320, 20)
 ferrari.acelerar()
 ferrari.acelerar()
