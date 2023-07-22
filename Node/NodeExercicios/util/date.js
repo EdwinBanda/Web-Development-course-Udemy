@@ -1,6 +1,5 @@
-
-function conversaoData(date){
-    return date.toISOString()
+function conversaoISO(data){
+    return data.toISOString()
 }
 
-module.exports = conversaoData
+module.exports = conversaoISO
