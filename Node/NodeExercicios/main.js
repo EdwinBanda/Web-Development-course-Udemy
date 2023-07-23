@@ -52,12 +52,11 @@ app.get('/atualizar-usuario/:id', (req, res)=>{
         (error)=>{
             res.status(error.statusCode).json({error: error.message})
         })
-
+        atualizarUsuario(usuarioAAtualizar, userID, onSuccess, onError)
 })
 
 
 
-atualizarUsuario(userID, usuarioAAtualizar, onSuccess, onError)
 
 const port = 4000
 app.listen(port, () => {

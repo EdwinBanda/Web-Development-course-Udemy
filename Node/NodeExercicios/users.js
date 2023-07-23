@@ -10,7 +10,7 @@ function idAleatorio(){
 }
 
 function atualizarUsuario(randomID, usuarioObj, successCallback, errorCallback){
-    if(!Number.isInteger(randomID) || userID <= 0){
+    if(!Number.isInteger(randomID) || randomID <= 0){
         const errorObj = { message: 'ID do usuario invalido', statusCode: 400}
         errorCallback(errorObj)
         return
