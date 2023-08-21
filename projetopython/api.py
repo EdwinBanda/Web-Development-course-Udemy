@@ -44,5 +44,5 @@ else:
     print("Não foi possível obter uma resposta da API.")
 
 # Razoes possiveis:
-# Formato 'wav' nao suportado pela api
+# Formato 'wav' nao suportado pela apis
 # 
