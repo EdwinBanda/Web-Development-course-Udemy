@@ -1,6 +1,6 @@
-class animal{
-    constructor(surName){
-        this.surName = 'bonny'
+class animals {
+    constructor(surName) {
+        this.surName = surName
         // latir(){
         //     console.log('hoof hoof!')
         // }
@@ -8,22 +8,26 @@ class animal{
     }
 }
 
-class dog extends animal{
-    constructor(surName){
-        this.name= 'Pluto'
-
+class dog extends animals {
+    constructor(name = 'Pluto') {
+        super('Bonny')
+        this.name = name
     }
 }
-const checkIfInstanceOf = function(obj, classFunction) {
-    if(obj === null || obj === undefined || typeof classFunction !== 'function'){
-        return false
+const checkIfInstanceOf = async function (obj, classFunction) {
+    if (obj === null || obj === undefined || typeof classFunction !== 'function') {
+        return await false
     }
-    const prototype = Object.getPrototypeOf(obj)
-    if(prototype){
-        if(prototype === classFunction.prototype){
-            return true
-        }
-    }
+    return obj instanceof classFunction // Verifica se um objeto eh instancia de uma classe especifica, retorna true/false
+    // const prototype = Object.getPrototypeOf(obj)
+    // if (prototype) {
+    //     if (prototype === classFunction.prototype) {
+    //         return await true
+    //     }
+    // }
 };
+const mydog = new dog()
+console.log(dog.prototype)
 
-console.log(checkIfInstanceOf(new dog(), animal))
+checkIfInstanceOf(mydog, animals)
+    .then(console.log)

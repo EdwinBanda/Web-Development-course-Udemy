@@ -12,8 +12,9 @@ class pai extends avo {
 }
 
 class Filho extends pai{
-    constructor(){
+    constructor(name = 'Antonio'){
         super('Silva')
+        this.name = name
     }
 }
 
