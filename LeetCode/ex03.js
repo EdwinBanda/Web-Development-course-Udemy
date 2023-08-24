@@ -1,3 +1,4 @@
+// Cache com limite de tempo
 class expiringKeyValueStore{
     constructor(){
         this.dados = new Map()
@@ -22,8 +23,8 @@ class expiringKeyValueStore{
     count(){
         const tempoAtual = Date.now()
         let count = 0
-        for(const [chave, dados] of this.dados.entries()){
-            if(dados.validade > tempoAtual){
+        for(const dado of this.dados.entries()){
+            if(dado.validade > tempoAtual){
                 count++
             }
         }
