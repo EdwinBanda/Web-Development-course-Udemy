@@ -18,7 +18,6 @@
             xhr.onload = e =>{
                 if(xhr.status >= 200 || xhr.status < 300){
                     config.sucesso(xhr.response)
-                    console.log("OK")
                 }else if(xhr.status >= 400){
                     config.erro({
                         codigo: xhr.status,
