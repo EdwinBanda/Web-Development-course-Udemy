@@ -28,6 +28,12 @@ app.post('/upload', (req,res)=>{
     })
 })
 
+app.post('/formulario', (req, res)=>{
+    res.send({
+        id: 1,
+        ...req.body,
+    })
+})
 
 
 
