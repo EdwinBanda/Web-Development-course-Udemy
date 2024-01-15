@@ -34,11 +34,13 @@
 
             const form = e.target
             const data = new FormData(form)
+            // console.log(data)
 
             const option = {
                 method: form.method,
                 body: new URLSearchParams(data)
             }
+            console.log(option.body)
 
             const resultado = document.getElementById('resultado')
             // fetch(form.action, option)
