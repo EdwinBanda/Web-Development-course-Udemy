@@ -1,27 +1,29 @@
-const {series} = require('gulp');
+const {parallel} = require('gulp');
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 
-
-function transformacaoJS(callBack){
-    gulp.src('src/**/*.js')
+function transformJS(callback){
+    gulp.src('/src/**/*.js')
         .pipe(babel({
             comments: false,
-            presets: "env"
+            presets: ["env"]
         }))
         .pipe(uglify())
+        .on('error', err=> err)  // Caso aconteca um erro... faca...
         .pipe(concat('codigo.min.js'))
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('build'))
 
-
-    return callBack()
+    return callback()
 }
 
-function fim(callBack){
-    console.log('Fim!!!')
-    return callBack()
+function fim(callback){
+    console.log("Fim!")
+    return callback()
 }
 
-exports.default = series(transformacaoJS, fim)
+module.exports.default = parallel(
+    transformJS,
+    fim
+)
