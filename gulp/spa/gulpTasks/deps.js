@@ -18,4 +18,5 @@ function depsFONTS(){
 module.exports = {
     depsCSS,
     depsFONTS
+    
 }
